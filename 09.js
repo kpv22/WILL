@@ -24,9 +24,33 @@ function filtrar(funcion) {
   // productos.filtrar(function(p) {
   //   return p.price >= 50;
   // }) => [{price: 100, name:'tv'}]
+  Array.prototype.filtrar = function (funcion) {
+    let nvoArray = [];
+    for (let i = 0; i < this.length; i++) {
+      if (funcion(this[i])) {
+        nvoArray.push(funcion(this[i]));
+      }
+    }
+    return nvoArray;
+  };
+  // Array.prototype.filtrar = function (funcion) {
+  //   const nuevoArray = [];
+  //   this.forEach((element) => {
+  //     if (funcion(element)) {
+  //       nuevoArray.push(element);
+  //     }
+  //   });
+  //   return nuevoArray;
+  // };
 
-};
-
+  // Array.prototype.filtrar = function (funcion) {
+  //   return this.map(function (el) {
+  //     if (funcion(el)) {
+  //       return el;
+  //     }
+  //   });
+  // };
+}
 // No modifiques nada debajo de esta linea //
 
-module.exports = filtrar
+module.exports = filtrar;

@@ -15,8 +15,18 @@ function pluck(array, propiedad) {
 
   // Tu código acá:
 
+  return array.map(function (el) {
+    return el[propiedad];
+  });
 }
+pluck(
+  [
+    { name: "TV LCD", price: 100 },
+    { name: "Computadora", price: 500 },
+  ],
+  "nombre"
+);
 
 // No modifiques nada debajo de esta linea //
 
-module.exports = pluck
+module.exports = pluck;
